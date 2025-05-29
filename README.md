@@ -1,17 +1,20 @@
 # Workspace
-
-python3.11  
-cpu version  
-Dockerfile & jupyter lab config  
+Workspace.docker
 
 ```
-docker build -t workspace:latest .
+docker build -t workspace-img:250529 .
+
+
+docker run -td --init --name workspace \
+-v ~/Workspace:/app \
+-p 8888:8888 \
+workspace-img:250529
+
+
+docker exec -it workspace bash
 ```
 
-```
-docker run -td \
-  --name Workspace \
-  -p 8888:8888 -p 5000-5002:5000-5002 \
-  -v $(pwd):/app \
-  workspace:latest
-```
+- PID 1: `CMD ["sleep", "infinity"]`
+- dev-container vscode에 extensions 설치
+- (선택) automl 사전설정(requirements, kubeflow-config)
+
