@@ -2,13 +2,13 @@
 Workspace.docker
 
 ```
-docker build -t workspace-img:250529 .
+docker build -t workspace-img:250613 .
 
 
 docker run -td --init --name workspace \
 -v ~/Workspace:/app \
 -p 8888:8888 \
-workspace-img:250529
+workspace-img:250613
 
 
 docker exec -it workspace bash

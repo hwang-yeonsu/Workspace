@@ -94,8 +94,9 @@ COPY --from=builder /app /app
 ENV VIRTUAL_ENV=${UV_VENV_DIR}
 ENV PATH="${UV_VENV_DIR}/bin:$PATH"
 
-RUN git config --global --add safe.directory '*'
-RUN echo '\n# Source bash completion script\n. /usr/share/bash-completion/bash_completion' >> /root/.bashrc
+RUN git config --global --add safe.directory '*' && \
+    echo '\n# Source bash completion script\n. /usr/share/bash-completion/bash_completion' >> /root/.bashrc && \
+    echo '\nalias ll="ls -alF"' >> /root/.bashrc
 
 # (Optional) Non-privileged user 설정
 # ARG UID=10001
