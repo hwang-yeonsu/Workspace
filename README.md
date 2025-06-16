@@ -17,4 +17,5 @@ docker exec -it workspace bash
 - PID 1: `CMD ["sleep", "infinity"]`
 - dev-container vscode에 extensions 설치
 - (선택) automl 사전설정(requirements, kubeflow-config)
+- (선택) backsoring runner 설치(alias pip='uv pip' && . sh/install-runner.sh)
 
